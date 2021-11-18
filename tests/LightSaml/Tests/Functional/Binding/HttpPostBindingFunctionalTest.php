@@ -35,7 +35,6 @@ class HttpPostBindingFunctionalTest extends BaseTestCase
                 $doc = new \DOMDocument();
                 $doc->loadXML($event->getSubject());
                 $this->assertEquals('AuthnRequest', $doc->firstChild->localName);
-
                 return $event;
             });
 
@@ -107,7 +106,6 @@ class HttpPostBindingFunctionalTest extends BaseTestCase
                 $doc = new \DOMDocument();
                 $doc->loadXML($event->getSubject());
                 $this->assertEquals('AuthnRequest', $doc->firstChild->localName);
-
                 return $event;
             });
 
