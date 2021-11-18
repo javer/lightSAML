@@ -154,7 +154,7 @@ abstract class AbstractContext implements ContextInterface
     /**
      * @return \ArrayIterator
      */
-    public function getIterator()
+    public function getIterator(): \ArrayIterator
     {
         return new \ArrayIterator($this->subContexts);
     }

@@ -115,7 +115,7 @@ class ParameterBag implements \IteratorAggregate, \Countable, \Serializable
     /**
      * @return \ArrayIterator
      */
-    public function getIterator()
+    public function getIterator(): \ArrayIterator
     {
         return new \ArrayIterator($this->parameters);
     }
@@ -123,7 +123,7 @@ class ParameterBag implements \IteratorAggregate, \Countable, \Serializable
     /**
      * @return int
      */
-    public function count()
+    public function count(): int
     {
         return count($this->parameters);
     }
@@ -136,5 +136,17 @@ class ParameterBag implements \IteratorAggregate, \Countable, \Serializable
     public function unserialize($serialized)
     {
         $this->parameters = unserialize($serialized);
+    }
+
+    public function __serialize(): array
+    {
+        return [
+            'parameters' => $this->parameters,
+        ];
+    }
+
+    public function __unserialize(array $data): void
+    {
+        $this->parameters = $data['parameters'];
     }
 }
