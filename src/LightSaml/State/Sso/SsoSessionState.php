@@ -335,4 +335,32 @@ class SsoSessionState implements \Serializable
             $this->parameters->replace($options);
         }
     }
+
+    public function __serialize(): array
+    {
+        return [
+            'idpEntityId' => $this->idpEntityId,
+            'spEntityId' => $this->spEntityId,
+            'nameId' => $this->nameId,
+            'nameIdFormat' => $this->nameIdFormat,
+            'sessionIndex' => $this->sessionIndex,
+            'sessionInstant' => $this->sessionInstant,
+            'firstAuthOn' => $this->firstAuthOn,
+            'lastAuthOn' => $this->lastAuthOn,
+            'parameters' => $this->parameters,
+        ];
+    }
+
+    public function __unserialize(array $data): void
+    {
+        $this->idpEntityId = $data['idpEntityId'];
+        $this->spEntityId = $data['spEntityId'];
+        $this->nameId = $data['nameId'];
+        $this->nameIdFormat = $data['nameIdFormat'];
+        $this->sessionIndex = $data['sessionIndex'];
+        $this->sessionInstant = $data['sessionInstant'];
+        $this->firstAuthOn = $data['firstAuthOn'];
+        $this->lastAuthOn = $data['lastAuthOn'];
+        $this->parameters = $data['parameters'];
+    }
 }

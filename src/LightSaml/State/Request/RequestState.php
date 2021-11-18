@@ -113,4 +113,19 @@ class RequestState implements \Serializable
         list($this->id, $nonce, $parameters) = unserialize($serialized);
         $this->parameters->unserialize($parameters);
     }
+
+    public function __serialize(): array
+    {
+        return [
+            'id' => $this->id,
+            'parameters' => $this->parameters->__serialize(),
+        ];
+    }
+
+    public function __unserialize(array $data): void
+    {
+        $this->id = $data['id'];
+        $this->parameters = new ParameterBag();
+        $this->parameters->__unserialize($data['parameters']);
+    }
 }

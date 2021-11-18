@@ -218,4 +218,20 @@ class SsoState implements \Serializable
             $this->parameters->add($oldOptions);
         }
     }
+
+    public function __serialize(): array
+    {
+        return [
+            'localSessionId' => $this->localSessionId,
+            'ssoSessions' => $this->ssoSessions,
+            'parameters' => $this->parameters,
+        ];
+    }
+
+    public function __unserialize(array $data): void
+    {
+        $this->localSessionId = $data['localSessionId'];
+        $this->ssoSessions = $data['ssoSessions'];
+        $this->parameters = $data['parameters'];
+    }
 }
