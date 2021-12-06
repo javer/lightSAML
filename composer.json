@@ -1,5 +1,5 @@
 {
-    "name": "lightsaml/lightsaml",
+    "name": "javer/lightsaml",
     "license": "MIT",
     "type": "library",
     "description": "Light SAML 2.0 PHP library",
@@ -29,16 +29,16 @@
         }
     },
     "require": {
-        "php": ">=7.2.5",
-        "robrichards/xmlseclibs": "~2.0|~3.0|~4.0",
-        "symfony/http-foundation": "~5.0",
-        "symfony/event-dispatcher": "~5.0"
+        "php": ">=8.0",
+        "robrichards/xmlseclibs": "^3.0",
+        "symfony/http-foundation": "^5.4 || ^6.0",
+        "symfony/event-dispatcher": "^5.4 || ^6.0"
     },
     "require-dev": {
-        "symfony/dom-crawler": "~5.0",
-        "symfony/css-selector": "~5.0",
+        "symfony/dom-crawler": "^5.4 || ^6.0",
+        "symfony/css-selector": "^5.4 || ^6.0",
         "pimple/pimple": "~3.0",
-        "phpunit/phpunit": "^8.4",
+        "phpunit/phpunit": "^9.5",
         "monolog/monolog": "^2.0.0"
     },
     "suggest": {
@@ -46,5 +46,10 @@
         "lightsaml/sp-bundle": "Symfony 2 SP security bundle"
     },
     "prefer-stable": true,
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
 }
