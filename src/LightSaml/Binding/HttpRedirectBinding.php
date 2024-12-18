@@ -30,7 +30,7 @@ class HttpRedirectBinding extends AbstractBinding
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function send(MessageContext $context, $destination = null)
+    public function send(MessageContext $context, ?string $destination = null)
     {
         $destination = $context->getMessage()->getDestination() ? $context->getMessage()->getDestination() : $destination;
 
@@ -203,7 +203,7 @@ class HttpRedirectBinding extends AbstractBinding
     /**
      * @param string $msg
      */
-    protected function addSignatureToUrl(&$msg, SignatureWriter $signature = null)
+    protected function addSignatureToUrl(&$msg, ?SignatureWriter $signature = null)
     {
         /** @var $key XMLSecurityKey */
         $key = $signature ? $signature->getXmlSecurityKey() : null;

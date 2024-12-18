@@ -42,7 +42,7 @@ abstract class AbstractContext implements ContextInterface
     /**
      * @return ContextInterface
      */
-    public function setParent(ContextInterface $parent = null)
+    public function setParent(?ContextInterface $parent = null)
     {
         $this->parent = $parent;
 
@@ -55,7 +55,7 @@ abstract class AbstractContext implements ContextInterface
      *
      * @return ContextInterface|null
      */
-    public function getSubContext($name, $class = null)
+    public function getSubContext($name, ?string $class = null)
     {
         if (isset($this->subContexts[$name])) {
             return $this->subContexts[$name];

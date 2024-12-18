@@ -27,10 +27,10 @@ abstract class Endpoint extends AbstractSamlModel
     protected $responseLocation;
 
     /**
-     * @param string $location
-     * @param string $binding
+     * @param string|null $location
+     * @param string|null $binding
      */
-    public function __construct($location = null, $binding = null)
+    public function __construct(?string $location = null, ?string $binding = null)
     {
         $this->location = $location;
         $this->binding = $binding;

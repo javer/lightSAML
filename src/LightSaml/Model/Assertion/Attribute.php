@@ -31,10 +31,10 @@ class Attribute extends AbstractSamlModel
     protected $attributeValue;
 
     /**
-     * @param string|null     $name
-     * @param string|string[] $value
+     * @param string|null          $name
+     * @param string|string[]|null $value
      */
-    public function __construct($name = null, $value = null)
+    public function __construct(?string $name = null, string|array|null $value = null)
     {
         $this->name = $name;
         if ($value) {

@@ -71,7 +71,7 @@ class EntityDescriptor extends Metadata
     /**
      * @param string|null $entityId
      */
-    public function __construct($entityId = null, array $items = [])
+    public function __construct(?string $entityId = null, array $items = [])
     {
         $this->entityID = $entityId;
         $this->items = $items;

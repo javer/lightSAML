@@ -45,10 +45,10 @@ abstract class AbstractNameID extends AbstractSamlModel
     protected $spProvidedId;
 
     /**
-     * @param string $value
-     * @param string $format
+     * @param string|null $value
+     * @param string|null $format
      */
-    public function __construct($value = null, $format = null)
+    public function __construct(?string $value = null, ?string $format = null)
     {
         $this->value = $value;
         $this->format = $format;

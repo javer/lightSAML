@@ -25,7 +25,7 @@ abstract class AbstractBinding
     /**
      * @return AbstractBinding
      */
-    public function setEventDispatcher(EventDispatcherInterface $eventDispatcher = null)
+    public function setEventDispatcher(?EventDispatcherInterface $eventDispatcher = null)
     {
         $this->eventDispatcher = $eventDispatcher;
 
@@ -65,7 +65,7 @@ abstract class AbstractBinding
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    abstract public function send(MessageContext $context, $destination = null);
+    abstract public function send(MessageContext $context, ?string $destination = null);
 
     abstract public function receive(Request $request, MessageContext $context);
 }

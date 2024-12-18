@@ -41,7 +41,7 @@ abstract class AbstractSamlModel implements SamlElementInterface
      *
      * @throws \LogicException
      */
-    private function oneElementToXml($name, \DOMNode $parent, SerializationContext $context, $namespace = null)
+    private function oneElementToXml($name, \DOMNode $parent, SerializationContext $context, ?string $namespace = null)
     {
         $value = $this->getPropertyValue($name);
         if (null == $value) {
@@ -65,7 +65,7 @@ abstract class AbstractSamlModel implements SamlElementInterface
      * @param array|string[] $names
      * @param string|null    $namespace
      */
-    protected function singleElementsToXml(array $names, \DOMNode $parent, SerializationContext $context, $namespace = null)
+    protected function singleElementsToXml(array $names, \DOMNode $parent, SerializationContext $context, ?string $namespace = null)
     {
         foreach ($names as $name) {
             $this->oneElementToXml($name, $parent, $context, $namespace);
@@ -79,7 +79,7 @@ abstract class AbstractSamlModel implements SamlElementInterface
      *
      * @throws \LogicException
      */
-    protected function manyElementsToXml($value, \DOMNode $node, SerializationContext $context, $nodeName = null, $namespaceUri = null)
+    protected function manyElementsToXml($value, \DOMNode $node, SerializationContext $context, ?string $nodeName = null, ?string $namespaceUri = null)
     {
         if (false == $value) {
             return;

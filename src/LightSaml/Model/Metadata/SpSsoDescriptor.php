@@ -105,7 +105,7 @@ class SpSsoDescriptor extends SSODescriptor
      *
      * @return AssertionConsumerService|null
      */
-    public function getFirstAssertionConsumerService($binding = null)
+    public function getFirstAssertionConsumerService(?string $binding = null)
     {
         foreach ($this->getAllAssertionConsumerServices() as $svc) {
             if (null == $binding || $svc->getBinding() == $binding) {

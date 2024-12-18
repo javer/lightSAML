@@ -29,7 +29,7 @@ class OwnContainerProvider implements ServiceProviderInterface
     /**
      * @param CredentialInterface[] $ownCredentials
      */
-    public function __construct(EntityDescriptorProviderInterface $ownEntityDescriptorProvider, array $ownCredentials = null)
+    public function __construct(EntityDescriptorProviderInterface $ownEntityDescriptorProvider, ?array $ownCredentials = null)
     {
         $this->ownEntityDescriptorProvider = $ownEntityDescriptorProvider;
         if ($ownCredentials) {

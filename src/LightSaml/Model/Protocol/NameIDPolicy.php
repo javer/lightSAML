@@ -37,7 +37,7 @@ class NameIDPolicy extends AbstractSamlModel
      * @param string $format
      * @param bool   $allowCreate
      */
-    public function __construct($format = null, $allowCreate = null)
+    public function __construct(?string $format = null, ?bool $allowCreate = null)
     {
         $this->allowCreate = $allowCreate;
         $this->format = $format;
