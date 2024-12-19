@@ -64,19 +64,19 @@ abstract class AbstractResolveEndpointActionTest extends BaseTestCase
     }
 
     /**
-     * @param string           $ownRole
-     * @param SamlMessage      $inboundMessage
-     * @param Endpoint         $endpoint
-     * @param EntityDescriptor $partyEntityDescriptor
-     * @param string           $profileId
+     * @param string                $ownRole
+     * @param SamlMessage|null      $inboundMessage
+     * @param Endpoint|null         $endpoint
+     * @param EntityDescriptor|null $partyEntityDescriptor
+     * @param string                $profileId
      *
      * @return \LightSaml\Context\Profile\ProfileContext
      */
     protected function createContext(
         $ownRole = ProfileContext::ROLE_IDP,
-        SamlMessage $inboundMessage = null,
-        Endpoint $endpoint = null,
-        EntityDescriptor $partyEntityDescriptor = null,
+        ?SamlMessage $inboundMessage = null,
+        ?Endpoint $endpoint = null,
+        ?EntityDescriptor $partyEntityDescriptor = null,
         $profileId = Profiles::SSO_IDP_RECEIVE_AUTHN_REQUEST
     ) {
         $context = $this->getProfileContext($profileId, $ownRole);

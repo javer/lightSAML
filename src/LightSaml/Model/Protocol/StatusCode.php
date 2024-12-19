@@ -27,7 +27,7 @@ class StatusCode extends AbstractSamlModel
     /**
      * @param string $value
      */
-    public function __construct($value = null)
+    public function __construct(?string $value = null)
     {
         $this->value = $value;
     }

@@ -107,7 +107,7 @@ class IdpSsoDescriptor extends SSODescriptor
      *
      * @return SingleSignOnService|null
      */
-    public function getFirstSingleSignOnService($binding = null)
+    public function getFirstSingleSignOnService(?string $binding = null)
     {
         foreach ($this->getAllSingleSignOnServices() as $svc) {
             if (null == $binding || $svc->getBinding() == $binding) {

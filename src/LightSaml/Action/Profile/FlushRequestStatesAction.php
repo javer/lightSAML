@@ -48,7 +48,7 @@ class FlushRequestStatesAction extends AbstractProfileAction
     /**
      * @param ContextInterface|null $requestStateContext
      */
-    protected function flush($requestStateContext = null)
+    protected function flush(?ContextInterface $requestStateContext = null)
     {
         if ($requestStateContext instanceof RequestStateContext &&
             $requestStateContext->getRequestState() &&

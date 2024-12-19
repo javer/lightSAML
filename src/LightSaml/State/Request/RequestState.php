@@ -25,7 +25,7 @@ class RequestState implements \Serializable
      * @param string $id
      * @param mixed  $nonce
      */
-    public function __construct($id = null, $nonce = null)
+    public function __construct(?string $id = null, mixed $nonce = null)
     {
         $this->id = $id;
         $this->parameters = new ParameterBag();

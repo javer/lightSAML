@@ -63,7 +63,7 @@ abstract class SSODescriptor extends RoleDescriptor
      *
      * @return SingleLogoutService|null
      */
-    public function getFirstSingleLogoutService($binding = null)
+    public function getFirstSingleLogoutService(?string $binding = null)
     {
         foreach ($this->getAllSingleLogoutServices() as $svc) {
             if (null == $binding || $binding == $svc->getBinding()) {

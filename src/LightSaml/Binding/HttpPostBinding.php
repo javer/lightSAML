@@ -25,7 +25,7 @@ class HttpPostBinding extends AbstractBinding
      *
      * @return SamlPostResponse
      */
-    public function send(MessageContext $context, $destination = null)
+    public function send(MessageContext $context, ?string $destination = null)
     {
         $message = MessageContextHelper::asSamlMessage($context);
         $destination = $message->getDestination() ? $message->getDestination() : $destination;

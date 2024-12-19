@@ -32,7 +32,7 @@ class SignatureStringReader extends AbstractSignatureReader
      * @param string|null $algorithm
      * @param string|null $data
      */
-    public function __construct($signature = null, $algorithm = null, $data = null)
+    public function __construct(?string $signature = null, ?string $algorithm = null, ?string $data = null)
     {
         $this->signature = $signature;
         $this->algorithm = $algorithm;
